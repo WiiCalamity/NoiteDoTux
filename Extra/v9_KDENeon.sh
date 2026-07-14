@@ -174,7 +174,7 @@ camera() {
 ##################
 
 routine() {
-  if [[ $timeCap -ne $SECONDS ]]; then
+  if [[ $timeCap -ne $SECONDS ]]; then # timeCap restricts the conditions to once every 1 second
     # Movement opportunity
     aux=$((timeCap%5))
     if [[ $aux -eq 0 ]]; then
@@ -1956,7 +1956,7 @@ ascii_cam9_both() {
 #         \____          )      - \      /
 #             '-----____/           ----
 
-cd ./Audio
+cd ./Extra/Audio
 read -p "tuxAiLevel: " tuxAiLevel
 read -p "repAiLevel: " repAiLevel
 paplay ambience2.mp3 &

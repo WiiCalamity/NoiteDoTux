@@ -2,6 +2,19 @@ Lista de mudanças
 -: Mudança
 #: Comentário
 
+v10 beta 13.07.2026 "Bourne Again":
+ - Rework TOTAL do jogo... em progresso
+ - A versão 9 está disponível no Extra como recordação
+ - Novas mecânicas: carga, flash, temperatura e câmeras
+ - Novos animatrônicos: Tux, Replicant, Kiki, GNU, Beastie, Konqi e Duke
+ # Ainda estou na fase de brainstorm. Os últimos dois itens são propostas.
+ # Decidi reconstruir o jogo por completo porque ele estava mal organizado,
+   o que me gerou desmotivação. Daqui pra frente as mecânicas serão melhor
+   pensadas e o código será melhor estruturado.
+ # Infelizmente terei que discartar meu progresso, mas pelo menos o produto final
+   será bem melhor.
+ # Forte inspiração em One Night at Flumpty's 3!
+
 v9 beta 11.6.2026 "KDE Neon":
  - Repositório do Github!
  - Redesenhei a câmera 1
