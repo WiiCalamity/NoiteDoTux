@@ -1,61 +1,50 @@
 #!/bin/bash
 
-ascii_window() {
-    clear
-    echo "window"
+ascii.window() {
+    printf "window\n"
 }
 
-ascii_oven() {
-    clear
-    echo "oven"
+ascii.oven() {
+    printf "oven\n"
 }
 
-ascii_maindoor() {
-    clear
-    echo "maindoor"
+ascii.maindoor() {
+    printf "maindoor\n"
 }
 
-ascii_maindoor_flash() {
-    clear
-    echo "*flash*"
+ascii.maindoorFlash() {
+    printf "*flash*\n"
 }
 
-ascii_otherdoor() {
-    clear
-    echo "otherdoor"
+ascii.otherdoor() {
+    printf "otherdoor\n"
 }
 
-ascii_otherdoor_flash() {
-    clear
-    echo "*flash*"
+ascii.otherdoorFlash() {
+    printf "*flash*\n"
 }
 
-ascii_cam1() {
-    clear
-    echo "cam1"
+ascii.cam1() {
+    printf "cam1\n"
+    printf "feed\n"
 }
 
-ascii_cam2() {
-    clear
-    echo "cam2"
+ascii.cam2() {
+    printf "cam2\n"
 }
 
-ascii_cam3() {
-    clear
-    echo "cam3"
+ascii.cam3() {
+    printf "cam3\n"
 }
 
-ascii_cam4() {
-    clear
-    echo "cam4"
+ascii.cam4() {
+    printf "cam4\n"
 }
 
-ascii_cam5() {
-    clear
-    echo "cam5"
+ascii.cam5() {
+    printf "cam5\n"
 }
 
-ascii_cam6() {
-    clear
-    echo "cam6"
+ascii.cam6() {
+    printf "cam6\n"
 }

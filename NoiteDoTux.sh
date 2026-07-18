@@ -1,117 +1,122 @@
 #!/bin/bash
-
 source ASCIIs.sh # Imports functions defined by ASCIIs.sh
 
-declare -i charge
-declare -i temp
-declare -i tempDrain
-charge=100
-temp=100
-tempDrain=-2
-SECONDS=0
-timeCap=0
-currentCam=1
+################################################
+# __      __        _       _     _            #
+# \ \    / /       (_)     | |   | |           #
+#  \ \  / /_ _ _ __ _  __ _| |__ | | ___  ___  #
+#   \ \/ / _` | '__| |/ _` | '_ \| |/ _ \/ __| #
+#    \  / (_| | |  | | (_| | |_) | |  __/\__ \ #
+#     \/ \__,_|_|  |_|\__,_|_.__/|_|\___||___/ #
+#                                              #
+################################################
 
-window() {
-    while :; do
-        ascii_window
-        routine
-        read -s -t 0.1 -n 1 input
-        case $input in
-            a) room="oven"; return;;
-            s) room="camera"; return;;
-            d) room="maindoor"; return;;
-        esac
-    done
-}
+declare -i charge=100
+declare -i temperature=100
+declare -i currentRoom=2
+declare -i currentCam=1
+declare -i timeCap=1
+declare -i SECONDS=1
+room=("otherdoor" "maindoor" "window" "oven")
+botName=("beastie" "duke" "freedo" "gnu" "kiki" "konqi" "replicant" "tux")
+freedoData=("31" "32" "41" "42" "ww" "md" 00 -1)
+cameraFeed=(00 00 00 00 00 00 00 00)
+botPathIndex=(-1 -1 -1 -1 -1 -1 -1 -1)
+aiLevel=(00 00 20 00 00 00 00 00)
 
-oven() {
-    tempDrain=4
-    while :; do
-        ascii_oven
-        routine
-        read -s -t 0.1 -n 1 input
-        case $input in
-            d) room="window"; tempDrain=-2; return;;
-        esac
-    done
-}
+#################################################
+#  ______                _   _                  #
+# |  ____|              | | (_)                 #
+# | |__ _   _ _ __   ___| |_ _  ___  _ __  ___  #
+# |  __| | | | '_ \ / __| __| |/ _ \| '_ \/ __| #
+# | |  | |_| | | | | (__| |_| | (_) | | | \__ \ #
+# |_|   \__,_|_| |_|\___|\__|_|\___/|_| |_|___/ #
+#                                               #
+#################################################
 
-maindoor() {
-    while :; do
-        ascii_maindoor
-        routine
-        read -s -t 0.1 -n 1 input
-        case $input in
-            f)
-                if [[ $charge -ge 20 ]]; then
-                    ascii_maindoor_flash
-                    charge+=-20
-                    sleep 0.2
-                fi;;
-            a) room="window"; return;;
-            d) room="otherdoor"; return;;
-        esac
-    done
-}
-
-otherdoor() {
-    while :; do
-        ascii_otherdoor
-        routine
-        read -s -t 0.1 -n 1 input
-        case $input in
-            f)
-                if [[ $charge -ge 20 ]]; then
-                    ascii_otherdoor_flash
-                    charge+=-20
-                    sleep 0.2
-                fi;;
-            a) room="maindoor"; return
-        esac
-    done
-}
-
-camera() {
-    input=""
-    while [[ $input != "s" ]]; do
-        ascii_cam"$currentCam"
-        routine
-        read -s -t 0.1 -n 1 input
-        if [[ $input -ge 1 ]] && [[ $input -le 6 ]]; then
-            currentCam=$input
-        fi
-    done
-    room="window"
-}
-
-###############################
-
-routine() {
-    if [[ $timeCap -ne $SECONDS ]]; then
-
-        temp+=$tempDrain
-        if [[ $charge -lt 100 ]]; then
-            charge+=1
-        fi
-        if [[ $temp -le 0 ]]; then
-            reason="frio"
-            game_over
-        fi
+maindoorFlash() {
+    if [[ ${charge} -ge 35 ]]; then
+        ascii.maindoorFlash
+        charge+=-35
+        sleep 0.2
     fi
-    echo "Carga: $charge%"
-    echo "Temperatura: $temp%"
-    timeCap=$SECONDS
 }
 
-game_over() {
-    echo "Perdestes."
-    echo "Causa: $reason"
+otherdoorFlash() {
+    if [[ ${charge} -ge 35 ]]; then
+        ascii.otherdoorFlash
+        charge+=-35
+        sleep 0.2
+    fi
+}
+
+freedoMovement() {
+    freedoData[-1]=$((freedoData[-1]+1))
+    freedoData[-2]="${freedoData[${freedoData[-1]}]}"
+    cameraFeed[$i]=${freedoData[-2]}
+    printf "Freedo MOVED!!!!!!"
+}
+
+movementOpportunity() {
+    if [[ $((timeCap%5)) -eq 0 ]]; then
+        for i in $(seq ${#botName[@]}); do # seq n -> 1 2 3 .. n
+            i+=-1
+            [[ $((RANDOM%20+1)) -le ${aiLevel[$i]} ]] && "${botName[$i]}"Movement
+        done
+    fi
+}
+
+controlCharge() {
+    [[ ${charge} -lt 100 ]] && charge+=1
+}
+
+controlTemperature() {
+    if [[ ${currentRoom} -eq 3 ]]; then
+        [[ ${temperature} -lt 100 ]] && temperature+=3
+    elif [[ ${temperature} -le 0 ]]; then
+        reason="frio"
+        gameOver
+    else
+        temperature+=-2
+    fi
+}
+
+callMechanics() {
+    # Calls the functions that control the mechanics.
+    # It's a hub of functions! Awesumsaucez!
+    movementOpportunity
+    controlCharge
+    controlTemperature
+}
+
+gameOver() {
+    printf "Perdestes."
+    printf "Causa: ${reason}"
     exit
 }
 
-window
+####################################
+
 while :; do
-    # Redirect player input into its designated function
-    $room
+    read -s -t 0.1 -n 1 input
+    clear
+    if [[ ${cameraUp} ]]; then
+        ascii.cam"${currentCam}"
+        [[ ${input} -ge 1 ]] && [[ ${input} -le 6 ]] && currentCam=${input}
+        [[ ${input} = "s" ]] && cameraUp=
+    else
+        ascii."${room[${currentRoom}]}"
+        case ${input} in
+            a) [[ ${currentRoom} -gt 0 ]] && currentRoom+=-1;;
+            s) [[ ${currentRoom} -eq 2 ]] && cameraUp=1;;
+            d) [[ ${currentRoom} -lt 3 ]] && currentRoom+=1;;
+            f) [[ ${currentRoom} -eq 1 ]] && maindoorFlash
+               [[ ${currentRoom} -eq 0 ]] && otherdoorFlash;;
+        esac
+    fi
+    printf "Carga: %s%%\n" "${charge}"
+    printf "Temperatura: %s%%\n" "${temperature}"
+    printf "%s " "freedoData:" "${freedoData[@]}"; printf "\n"
+    [[ ${timeCap} -ne ${SECONDS} ]] && callMechanics
+    timeCap=${SECONDS}
 done

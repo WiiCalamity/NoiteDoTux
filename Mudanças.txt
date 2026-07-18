@@ -1,96 +1,115 @@
 Lista de mudanças
--: Mudança
-#: Comentário
-
-v10 beta 13.07.2026 "Bourne Again":
- - Rework TOTAL do jogo... em progresso
- - A versão 9 está disponível no Extra como recordação
- - Novas mecânicas: carga, flash, temperatura e câmeras
- - Novos animatrônicos: Tux, Replicant, Kiki, GNU, Beastie, Konqi e Duke
- # Ainda estou na fase de brainstorm. Os últimos dois itens são propostas.
- # Decidi reconstruir o jogo por completo porque ele estava mal organizado,
-   o que me gerou desmotivação. Daqui pra frente as mecânicas serão melhor
-   pensadas e o código será melhor estruturado.
- # Infelizmente terei que discartar meu progresso, mas pelo menos o produto final
-   será bem melhor.
- # Forte inspiração em One Night at Flumpty's 3!
-
-v9 beta 11.6.2026 "KDE Neon":
- - Repositório do Github!
- - Redesenhei a câmera 1
- - Otimização da IA
- - ASCII da câmera 9
- - Desenho do Replicant na câmera 4
- - Retoques em alguns desenhos
- - Otimização de código
- # https://github.com/WiiCalamity/NoiteDoTux <- novo repositório!!
- # Fazia tempo desde a última atualização
- # Desenhar é cansativo e um pouco desmotivador
- # Ainda vou implementar os sons... talvez o GitHub me distraia um pouco
-
-v8 beta 16.05.2026 "EndeavourOS":
- - Novas áreas no mapa: partes & serviços e balcão de prêmios. Sem desenho ainda.
- - A ventilação direita agora é uma porta
- - Otimização das funções do escritório.
- - Ajustes visuais menores
- # Nada demais por enquanto.
- # Seria ruim se o Replicant começasse seu trajeto vindo dos fliperamas, que é uma câmera
-   próxima ao escritório. Por isso vou colocar ele na câmera nova lá em cima.
- # Eu descobri como colocar som. Trabalharei nisso depois de fazer a reforma no código.
-
-v7 beta 08.05.2026 "Plymouth":
- - ASCII da câmera 6. Obrigado Kiara pela arte conceitual.
- - Refiz o método das "oportunidades de movimento". Ainda está grande, mas melhor.
- - Readição do duto esquerdo, que fora removido temporariamente.
- - O Replicant pode se mover agora. Adicionei ele de fato no código.
- # Conheço várias distros que usam codinomes em seus lançamentos. Vou começar a fazer isso
-   com nomes relacionados ao Linux e o GNU -- soa legal!
- # Por que não registrar a data das mudanças também?
- # Preciso inventar algum jeito das câmeras serem mais importantes. Não sei de que forma
-   posso adicionar o Konqi como um equivalente ao Foxy.
- # Não estou satisfeito com alguns dos desenhos mas desenhar é trabalhoso.
-
-v6 beta:
- - ASCII da câmera 8.
- - Sistema de energia (em progresso).
- - Trocando o sistema da lanterna por portas elétricas.
- - Animação da porta da ventilação da direita.
- - Otimizações.
- - Novo arquivo "playground" para fazer os desenhos.
- # Quando escrevo aqui parece que fiz pouco mas tudo dá um trabalhão.
- # Me preocupo se o jogo vai ficar legal de jogar e balanceado.
-
-v5 beta:
- - Arte ASCII do Tux, Replicant e Duke no duto direito do escritório.
- - Refiz a câmera 1. Agora é o banheiro em vez da sala dos funcionários.
- - Otimização de código (obrigatório)
- - Aprimoramentos das câmeras
- - Diminui a largura do quadro onde os gráficos aparecem
- - Novo arquivo de texto pra arquivar coisas removidas
-
-v4 beta:
- - Sistema de câmeras está quase completo; faltam os desenhos. E o Konqi.
- - Arte ASCII das câmeras 3 e 4. Yippie! Vou redesenhar a 7 pra fazer a 8.
- - Otimização significativa do código.
- # Algumas coisas ainda estão bagunçadas.
-
-v3 beta "câmeras!":
- - Removi o terminal por ser um tumor no código. Vou reprogramar para ser o painel do FNAF 3.
- - Mapa das câmeras, atualizado.
- - ASCII das câmeras 1, 2, 5. Replicant.
- - Atualizada a movimentação do Tux. Preciso fazer as câmeras atualizar sozinhas.
- - Sincronizada a posição do Tux com os desenhos das câmeras.
- - Lista de mudanças (o que você está lendo!)
- # Preciso fazer a tarefa de PES.
-
-v2 beta:
- - ASCII do escritório inteiro
- - Mapa das câmeras (antigo)
- - ASCII da câmera 7 especificamente
- - Terminal (terrível)
- - Otimização de código
-
-v1 beta - Começo:
- - Funções placeholder
- - Navegação sem interface
- - Testes com %RANDOM
+-: Mudança                                                                     |
+#: Comentário                                                                  |
+                                                                               |
+v11 beta 17.07.2026 "Nobara Linux":                                            |
+ - Mecânicas completas, exceto o relógio e os animatrônicos                    |
+ - Substituído "echo" por "printf" por ser mais estável                        |
+ - Novas funções para aumentar a legibilidade                                  |
+ - Abstração do sistema das salas. Antes era tudo fragmentado.
+ - Formatação do changelog Wooo!
+ # O código está insanamente melhor comparado ao antigo.                       |
+ # Valeu a pena recomeçar do zero. Estou motivado para programar novamente.    |
+ # Eu decidi deixar os desenhos como a última parte do projeto porque eles     |
+   eles consomem muito tempo e não consigo voltar atrás depois de fazer um.    |
+                                                                               |
+v10 beta 13.07.2026 "Bourne Again" (importante):                               |
+ - Rework TOTAL do jogo... em progresso                                        |
+ - A versão 9 está disponível no Extra como recordação                         |
+ - Novas mecânicas: carga, flash, temperatura e câmeras                        |
+ - Novos animatrônicos: Tux, Replicant, Kiki, GNU, Beastie, Konqi e Duke       |
+ # Ainda estou na fase de brainstorm. Os últimos dois itens são propostas.     |
+ # Decidi reconstruir o jogo por completo porque ele estava mal organizado,    |
+   o que me gerou desmotivação. Daqui pra frente as mecânicas serão melhor     |
+   pensadas e o código será melhor estruturado.                                |
+ # Infelizmente terei que descartar meu progresso, mas pelo menos o produto
+   final será bem melhor.                                                      |
+ # Forte inspiração em One Night at Flumpty's 3!                               |
+                                                                               |
+v9 beta 11.6.2026 "KDE Neon":                                                  |
+ - Repositório do Github!                                                      |
+ - Redesenhei a câmera 1                                                       |
+ - Otimização da IA                                                            |
+ - ASCII da câmera 9                                                           |
+ - Desenho do Replicant na câmera 4                                            |
+ - Retoques em alguns desenhos                                                 |
+ - Otimização de código                                                        |
+ # https://github.com/WiiCalamity/NoiteDoTux <- novo repositório!!             |
+ # Fazia tempo desde a última atualização                                      |
+ # Desenhar é cansativo e um pouco desmotivador                                |
+ # Ainda vou implementar os sons... talvez o GitHub me distraia um pouco       |
+                                                                               |
+v8 beta 16.05.2026 "EndeavourOS":                                              |
+ - Novas áreas no mapa: partes & serviços e balcão de prêmios. Sem desenho
+   ainda.
+ - A ventilação direita agora é uma porta                                      |
+ - Otimização das funções do escritório.                                       |
+ - Ajustes visuais menores                                                     |
+ # Nada demais por enquanto.                                                   |
+ # Seria ruim se o Replicant começasse seu trajeto vindo dos fliperamas, que é
+   uma câmera próxima ao escritório. Por isso vou colocar ele na câmera nova lá
+   em cima.
+ # Eu descobri como colocar som. Trabalharei nisso depois de fazer a reforma no
+   código.
+                                                                               |
+v7 beta 08.05.2026 "Plymouth":                                                 |
+ - ASCII da câmera 6. Obrigado Kiara pela arte conceitual.                     |
+ - Refiz o método das "oportunidades de movimento". Ainda está grande, mas
+   melhor.
+ - Readição do duto esquerdo, que fora removido temporariamente.               |
+ - O Replicant pode se mover agora. Adicionei ele de fato no código.           |
+ # Conheço várias distros que usam codinomes em seus lançamentos. Vou começar a
+   fazer isso
+   com nomes relacionados ao Linux e o GNU -- soa legal!                       |
+ # Por que não registrar a data das mudanças também?                           |
+ # Preciso inventar algum jeito das câmeras serem mais importantes. Não sei de
+   que forma
+   posso adicionar o Konqi como um equivalente ao Foxy.                        |
+ # Não estou satisfeito com alguns dos desenhos mas desenhar é trabalhoso.     |
+                                                                               |
+v6 beta:                                                                       |
+ - ASCII da câmera 8.                                                          |
+ - Sistema de energia (em progresso).                                          |
+ - Trocando o sistema da lanterna por portas elétricas.                        |
+ - Animação da porta da ventilação da direita.                                 |
+ - Otimizações.                                                                |
+ - Novo arquivo "playground" para fazer os desenhos.                           |
+ # Quando escrevo aqui parece que fiz pouco mas tudo dá um trabalhão.          |
+ # Me preocupo se o jogo vai ficar legal de jogar e balanceado.                |
+                                                                               |
+v5 beta:                                                                       |
+ - Arte ASCII do Tux, Replicant e Duke no duto direito do escritório.          |
+ - Refiz a câmera 1. Agora é o banheiro em vez da sala dos funcionários.       |
+ - Otimização de código (obrigatório)                                          |
+ - Aprimoramentos das câmeras                                                  |
+ - Diminui a largura do quadro onde os gráficos aparecem                       |
+ - Novo arquivo de texto pra arquivar coisas removidas                         |
+                                                                               |
+v4 beta:                                                                       |
+ - Sistema de câmeras está quase completo; faltam os desenhos. E o Konqi.      |
+ - Arte ASCII das câmeras 3 e 4. Yippie! Vou redesenhar a 7 pra fazer a 8.     |
+ - Otimização significativa do código.                                         |
+ # Algumas coisas ainda estão bagunçadas.                                      |
+                                                                               |
+v3 beta "câmeras!":                                                            |
+ - Removi o terminal por ser um tumor no código. Vou reprogramar para ser o
+   painel do FNAF 3.
+ - Mapa das câmeras, atualizado.                                               |
+ - ASCII das câmeras 1, 2, 5. Replicant.                                       |
+ - Atualizada a movimentação do Tux. Preciso fazer as câmeras atualizar
+   sozinhas.
+ - Sincronizada a posição do Tux com os desenhos das câmeras.                  |
+ - Lista de mudanças (o que você está lendo!)                                  |
+ # Preciso fazer a tarefa de PES.                                              |
+                                                                               |
+v2 beta:                                                                       |
+ - ASCII do escritório inteiro                                                 |
+ - Mapa das câmeras (antigo)                                                   |
+ - ASCII da câmera 7 especificamente                                           |
+ - Terminal (terrível)                                                         |
+ - Otimização de código                                                        |
+                                                                               |
+v1 beta - Começo:                                                              |
+ - Funções placeholder                                                         |
+ - Navegação sem interface                                                     |
+ - Testes com %RANDOM                                                          |
